@@ -58,13 +58,13 @@ end
 vim.g.markdown_recommended_style = 0
 
 -- settings sonokai theme
--- vim.g.sonokai_style = "andromeda"
--- vim.g.sonokai_enable_italic = 1
--- vim.g.sonokai_current_word = "bold"
--- vim.g.sonokai_better_performance = 1
--- vim.g.sonokai_dim_inactive_windows = 1
--- vim.g.sonokai_disable_italic_comment = 0
--- vim.g.sonokai_diagnostic_line_highlight = 1
+vim.g.sonokai_style = "andromeda"
+vim.g.sonokai_enable_italic = 1
+vim.g.sonokai_current_word = "bold"
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_dim_inactive_windows = 1
+vim.g.sonokai_disable_italic_comment = 0
+vim.g.sonokai_diagnostic_line_highlight = 1
 -- vim.g.sonokai_transparent_background = 1
 
 -- settings vim options recommended vitesse
