@@ -3,19 +3,15 @@ require("config.lazy")
 
 local notify = require("notify")
 local title = "Colorscheme"
-local defaultTheme = "catpuccin"
-local vitesseTheme = "vitesse"
-local sonokaiTheme = "sonokai"
 
 -- Função para definir o colorscheme com base na existência de arquivos
 local function setColorschemeByFiles()
-  local sonokaiFiles = { "requirements.txt", "poetry.lock", "app.py", "main.py" }
-  local vitesseFile = "package.json"
+  local pythonFiles = { "requirements.txt", "poetry.lock", "app.py", "main.py" }
+  local nodeFile = "package.json"
 
   local sonokaiExists = false
-  local vitesseExists = false
 
-  for _, file in ipairs(sonokaiFiles) do
+  for _, file in ipairs(pythonFiles) do
     if vim.fn.filereadable(file) == 1 then
       sonokaiExists = true
       break
@@ -23,9 +19,9 @@ local function setColorschemeByFiles()
   end
 
   if not sonokaiExists then
-    if vim.fn.filereadable(vitesseFile) == 1 then
-      notify("Ambiente NodeJs\nVitesse", "info", { title = title })
-      vim.cmd("colorscheme vitesse")
+    if vim.fn.filereadable(nodeFile) == 1 then
+      notify("Ambiente NodeJs\nTokyonight", "info", { title = title })
+      vim.cmd("colorscheme tokyonight-night")
     else
       notify("Ambiente Default\nCatppuccin", "info", { title = title })
       vim.cmd("colorscheme catppuccin")
