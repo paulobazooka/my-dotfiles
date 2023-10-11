@@ -153,9 +153,9 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-
 -- Debug ---
-map("n", "<leader>dR", "<cmd>DapContinue<cr>", {desc = "Run to Cursor"}) -- function() require("dap").run_to_cursor() end, desc = "Run to Cursor", })
+-- map("n", "<leader>dR", "<cmd>DapContinue<cr>", {desc = "Run to Cursor"}) -- function() require("dap").run_to_cursor() end, desc = "Run to Cursor", })
+-- map("n", "<leader>dE", "<cmd>DapEvaluate<cr>", {desc = "Evaluate Input"})
 --    { "<leader>dE", function() require("dapui").eval(vim.fn.input "[Expression] > ") end, desc = "Evaluate Input", },
 --    { "<leader>dC", function() require("dap").set_breakpoint(vim.fn.input "[Condition] > ") end, desc = "Conditional Breakpoint", },
 --    { "<leader>dU", function() require("dapui").toggle() end, desc = "Toggle UI", },

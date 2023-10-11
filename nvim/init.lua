@@ -3,9 +3,6 @@ require("config.lazy")
 
 local notify = require("notify")
 local title = "Colorscheme"
-local defaultTheme = "catpuccin"
-local vitesseTheme = "vitesse"
-local sonokaiTheme = "sonokai"
 
 -- Função para definir o colorscheme com base na existência de arquivos
 local function setColorschemeByFiles()
@@ -13,7 +10,6 @@ local function setColorschemeByFiles()
   local vitesseFile = "package.json"
 
   local sonokaiExists = false
-  local vitesseExists = false
 
   for _, file in ipairs(sonokaiFiles) do
     if vim.fn.filereadable(file) == 1 then
@@ -27,8 +23,8 @@ local function setColorschemeByFiles()
       notify("Ambiente NodeJs\nVitesse", "info", { title = title })
       vim.cmd("colorscheme vitesse")
     else
-      notify("Ambiente Default\nCatppuccin", "info", { title = title })
-      vim.cmd("colorscheme catppuccin")
+      notify("Ambiente Default\nTokyonight", "info", { title = title })
+      vim.cmd("colorscheme tokyonight-night")
     end
   else
     notify("Ambiente Python\nSonokai", "info", { title = title })
