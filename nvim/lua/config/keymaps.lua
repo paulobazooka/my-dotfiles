@@ -112,11 +112,11 @@ end
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+map("n", "<leader>uf", require("lazyvim.util").format.toggle, { desc = "Toggle format on Save" })
 map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
 map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "<leader>ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
-map("n", "<leader>ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
+map("n", "<leader>ud", Util.toggle.diagnostics, { desc = "Toggle Diagnostics" })
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 map("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 
@@ -152,27 +152,3 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
--- Debug ---
--- map("n", "<leader>dR", "<cmd>DapContinue<cr>", {desc = "Run to Cursor"}) -- function() require("dap").run_to_cursor() end, desc = "Run to Cursor", })
--- map("n", "<leader>dE", "<cmd>DapEvaluate<cr>", {desc = "Evaluate Input"})
---    { "<leader>dE", function() require("dapui").eval(vim.fn.input "[Expression] > ") end, desc = "Evaluate Input", },
---    { "<leader>dC", function() require("dap").set_breakpoint(vim.fn.input "[Condition] > ") end, desc = "Conditional Breakpoint", },
---    { "<leader>dU", function() require("dapui").toggle() end, desc = "Toggle UI", },
---    { "<leader>db", function() require("dap").step_back() end, desc = "Step Back", },
---    { "<leader>dc", function() require("dap").continue() end, desc = "Continue", },
---    { "<leader>dd", function() require("dap").disconnect() end, desc = "Disconnect", },
---    { "<leader>de", function() require("dapui").eval() end, mode = {"n", "v"}, desc = "Evaluate", },
---    { "<leader>dg", function() require("dap").session() end, desc = "Get Session", },
---    { "<leader>dh", function() require("dap.ui.widgets").hover() end, desc = "Hover Variables", },
---    { "<leader>dS", function() require("dap.ui.widgets").scopes() end, desc = "Scopes", },
---    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into", },
---    { "<leader>do", function() require("dap").step_over() end, desc = "Step Over", },
---    { "<leader>dp", function() require("dap").pause.toggle() end, desc = "Pause", },
---    { "<leader>dq", function() require("dap").close() end, desc = "Quit", },
---    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL", },
---    { "<leader>ds", function() require("dap").continue() end, desc = "Start", },
---    { "<leader>dt", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint", },
---    { "<leader>dx", function() require("dap").terminate() end, desc = "Terminate", },
---    { "<leader>du", function() require("dap").step_out() end, desc = "Step Out", },
---  },
