@@ -106,6 +106,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
     if not sonokaiExists then
       if vim.fn.filereadable(nodeFile) == 1 then
         notify("Ambiente NodeJs\nCatppuccin", "info", { title = title })
+        local catppuccin = require("catppuccin")
         vim.cmd("colorscheme catppuccin")
       else
         notify("Ambiente Default\nTokyonight", "info", { title = title })
