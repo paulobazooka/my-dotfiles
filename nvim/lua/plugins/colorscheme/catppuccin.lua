@@ -2,7 +2,7 @@ return {
   -- catppuccin
   {
     "catppuccin/nvim",
-    -- lazy = true,
+    lazy = true,
     name = "catppuccin",
     opts = {
       integrations = {
