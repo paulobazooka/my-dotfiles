@@ -5,29 +5,31 @@ local M = {
     { "theHamsta/nvim-dap-virtual-text" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "jbyuki/one-small-step-for-vimkind" },
+    { "nvim-neotest/neotest" },
+    { "nvim-neotest/neotest-python" },
   },
   -- stylua: ignore
   keys = {
-    { "<leader>dR", function() require("dap").run_to_cursor() end, desc = "Run to Cursor", },
-    { "<leader>dE", function() require("dapui").eval(vim.fn.input "[Expression] > ") end, desc = "Evaluate Input", },
+    { "<leader>dR", function() require("dap").run_to_cursor() end,                               desc = "Run to Cursor", },
+    { "<leader>dE", function() require("dapui").eval(vim.fn.input "[Expression] > ") end,        desc = "Evaluate Input", },
     { "<leader>dC", function() require("dap").set_breakpoint(vim.fn.input "[Condition] > ") end, desc = "Conditional Breakpoint", },
-    { "<leader>dU", function() require("dapui").toggle() end, desc = "Toggle UI", },
-    { "<leader>db", function() require("dap").step_back() end, desc = "Step Back", },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Continue", },
-    { "<leader>dd", function() require("dap").disconnect() end, desc = "Disconnect", },
-    { "<leader>de", function() require("dapui").eval() end, mode = {"n", "v"}, desc = "Evaluate", },
-    { "<leader>dg", function() require("dap").session() end, desc = "Get Session", },
-    { "<leader>dh", function() require("dap.ui.widgets").hover() end, desc = "Hover Variables", },
-    { "<leader>dS", function() require("dap.ui.widgets").scopes() end, desc = "Scopes", },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into", },
-    { "<leader>do", function() require("dap").step_over() end, desc = "Step Over", },
-    { "<leader>dp", function() require("dap").pause.toggle() end, desc = "Pause", },
-    { "<leader>dq", function() require("dap").close() end, desc = "Quit", },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL", },
-    { "<leader>ds", function() require("dap").continue() end, desc = "Start", },
-    { "<leader>dt", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint", },
-    { "<leader>dx", function() require("dap").terminate() end, desc = "Terminate", },
-    { "<leader>du", function() require("dap").step_out() end, desc = "Step Out", },
+    { "<leader>dU", function() require("dapui").toggle() end,                                    desc = "Toggle UI", },
+    { "<leader>db", function() require("dap").step_back() end,                                   desc = "Step Back", },
+    { "<leader>dc", function() require("dap").continue() end,                                    desc = "Continue", },
+    { "<leader>dd", function() require("dap").disconnect() end,                                  desc = "Disconnect", },
+    { "<leader>de", function() require("dapui").eval() end,                                      mode = { "n", "v" },             desc = "Evaluate", },
+    { "<leader>dg", function() require("dap").session() end,                                     desc = "Get Session", },
+    { "<leader>dh", function() require("dap.ui.widgets").hover() end,                            desc = "Hover Variables", },
+    { "<leader>dS", function() require("dap.ui.widgets").scopes() end,                           desc = "Scopes", },
+    { "<leader>di", function() require("dap").step_into() end,                                   desc = "Step Into", },
+    { "<leader>do", function() require("dap").step_over() end,                                   desc = "Step Over", },
+    { "<leader>dp", function() require("dap").pause.toggle() end,                                desc = "Pause", },
+    { "<leader>dq", function() require("dap").close() end,                                       desc = "Quit", },
+    { "<leader>dr", function() require("dap").repl.toggle() end,                                 desc = "Toggle REPL", },
+    { "<leader>ds", function() require("dap").continue() end,                                    desc = "Start", },
+    { "<leader>dt", function() require("dap").toggle_breakpoint() end,                           desc = "Toggle Breakpoint", },
+    { "<leader>dx", function() require("dap").terminate() end,                                   desc = "Terminate", },
+    { "<leader>du", function() require("dap").step_out() end,                                    desc = "Step Out", },
   },
   opts = {
     setup = {
@@ -41,8 +43,29 @@ local M = {
       commented = true,
     })
 
+    local icons = require("config.icons")
+
+    vim.api.nvim_set_hl(0, "blue", { fg = "#3d59a1" })
+    vim.api.nvim_set_hl(0, "red", { fg = "#ff0000" })
+    vim.api.nvim_set_hl(0, "green", { fg = "#9ece6a" })
+    vim.api.nvim_set_hl(0, "yellow", { fg = "#FFFF00" })
+    vim.api.nvim_set_hl(0, "orange", { fg = "#f09000" })
+
+    vim.fn.sign_define('DapBreakpoint',
+      { text = icons.diagnostics.Debug, texthl = 'red', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpointCondition',
+      { text = icons.kind.Number, texthl = 'blue', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpointRejected',
+      { text = '•', texthl = 'orange', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapStopped',
+      { text = icons.ui.Circle, texthl = 'green', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapLogPoint',
+      { text = icons.kind.Constant, texthl = 'yellow', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+
     local dap, dapui = require("dap"), require("dapui")
-    dapui.setup({})
+    dapui.setup({
+      icons = icons.diagnostics,
+    })
 
     dap.listeners.after.event_initialized["dapui_config"] = function()
       dapui.open()
