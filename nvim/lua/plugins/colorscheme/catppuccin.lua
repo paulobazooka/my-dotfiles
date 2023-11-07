@@ -2,8 +2,29 @@ return {
   -- catppuccin
   {
     "catppuccin/nvim",
-    -- lazy = true,
+    lazy = false,
     name = "catppuccin",
+    transparent_background = false,
+    -- term_colors = false,
+    dim_inactive = {
+      enabled = true,
+      shade = "dark",
+      percentage = 0.30,
+    },
+    styles = {
+      comments = { "italic" },
+      conditionals = { "italic" },
+      loops = {},
+      functions = { "bold", "italic" },
+      keywords = {},
+      strings = {},
+      variables = { "bold" },
+      numbers = {},
+      booleans = { "bold" },
+      properties = {},
+      types = {},
+      operators = {},
+    },
     opts = {
       integrations = {
         alpha = true,
@@ -35,5 +56,10 @@ return {
         which_key = true,
       },
     },
+    config = function()
+      vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+      vim.g.lightline = { colorscheme = "catppuccin" }
+      -- vim.cmd([[colorscheme catppuccin]])
+    end,
   },
 }
