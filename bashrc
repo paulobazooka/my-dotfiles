@@ -123,3 +123,4 @@ fi
 . "$HOME/.cargo/env"
 
 export PICO_SDK_PATH=~/.local/share/pico-sdk
+source "$HOME/.open_api_key.sh"
