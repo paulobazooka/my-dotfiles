@@ -10,7 +10,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "colorbuddy.nvim": { "branch": "master", "commit": "cdb5b0654d3cafe61d2a845e15b2b4b0e78e752a" },
-  "conform.nvim": { "branch": "master", "commit": "c3447c0080f4d6a94917b6eefa2dbdcac63dbfcc" },
+  "conform.nvim": { "branch": "master", "commit": "e388bd6725d83f83639e24482b9d1bca01c0c040" },
   "crates.nvim": { "branch": "main", "commit": "aac57ef84cf4fecf7907114b22e875f84a6128ee" },
   "dashboard-nvim": { "branch": "master", "commit": "63df28409d940f9cac0a925df09d3dc369db9841" },
   "dressing.nvim": { "branch": "master", "commit": "fe3071330a0720ce3695ac915820c8134b22d1b0" },
