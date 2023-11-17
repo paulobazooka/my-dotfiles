@@ -96,6 +96,7 @@ alias upall='echo "----- Atualizando pacotes deb -----" && sudo apt update && su
 alias gs='git status'
 alias gc='git commit -m'
 alias ga='git add'
+alias ls='exa --icons -l'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
