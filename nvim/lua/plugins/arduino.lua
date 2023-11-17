@@ -1,0 +1,3 @@
+return {
+  { "glebzlat/Arduino.nvim", }
+}
