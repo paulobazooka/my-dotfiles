@@ -45,22 +45,22 @@ local M = {
 
     local icons = require("config.icons")
 
-    vim.api.nvim_set_hl(0, "blue", { fg = "#3d59a1" })
-    vim.api.nvim_set_hl(0, "red", { fg = "#ff0000" })
+    vim.api.nvim_set_hl(0, "blue", { fg = "#007fff" })
+    vim.api.nvim_set_hl(0, "red", { fg = "#ff002f" })
     vim.api.nvim_set_hl(0, "green", { fg = "#9ece6a" })
     vim.api.nvim_set_hl(0, "yellow", { fg = "#FFFF00" })
     vim.api.nvim_set_hl(0, "orange", { fg = "#f09000" })
 
     vim.fn.sign_define('DapBreakpoint',
-      { text = icons.diagnostics.Debug, texthl = 'red', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = icons.ui.Circle, texthl = 'red', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
     vim.fn.sign_define('DapBreakpointCondition',
-      { text = icons.kind.Number, texthl = 'blue', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = icons.kind.Number, texthl = 'blue', linehl = 'DapBreakpointCondition', numhl = 'DapBreakpointCondition' })
     vim.fn.sign_define('DapBreakpointRejected',
-      { text = '•', texthl = 'orange', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = '•', texthl = 'orange', linehl = 'DapBreakpointRejected', numhl = 'DapBreakpointRejected' })
     vim.fn.sign_define('DapStopped',
-      { text = icons.ui.Circle, texthl = 'green', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = icons.ui.Circle, texthl = 'green', linehl = 'DapStopped', numhl = 'DapStopped' })
     vim.fn.sign_define('DapLogPoint',
-      { text = icons.kind.Constant, texthl = 'yellow', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = icons.kind.Constant, texthl = 'yellow', linehl = 'DapLogPoint', numhl = 'DapLogPoint' })
 
     local dap, dapui = require("dap"), require("dapui")
     dapui.setup({

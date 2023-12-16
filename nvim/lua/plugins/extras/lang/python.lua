@@ -17,7 +17,7 @@ return {
               type = "python",
               request = "attach",
               connect = {
-                port = 8001,
+                port = 5678,
                 host = "127.0.0.1",
               },
               mode = "remote",
