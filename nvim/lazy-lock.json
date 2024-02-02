@@ -78,4 +78,3 @@
   "vim-test": { "branch": "master", "commit": "46d2067586b788e2194e812bbfdbb2061b93a5ee" },
   "vitesse.nvim": { "branch": "main", "commit": "5209914aac1d107ae1e05a7cc54e30d48af4d23c" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
-}
