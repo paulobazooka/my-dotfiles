@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/pasergio/.oh-my-bash'
+export OSH="/home/$USER/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
@@ -153,7 +153,6 @@ alias upall='echo "----- Atualizando pacotes deb -----" && sudo apt update && su
 alias gs='git status'
 alias gc='git commit -m'
 alias ga='git add'
-alias gf='git-flow'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
