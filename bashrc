@@ -179,6 +179,8 @@ fi
 # fi
 . "$HOME/.cargo/env"
 
+export FLYCTL_INSTALL="/home/pasergio/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PICO_SDK_PATH=~/.local/share/pico-sdk
 export PIP_EXTRA_INDEX_URL="http://username:password@swarm-manager1:8023"
 export DJANGO_SETTINGS_MODULE=solicita.settings.dev
