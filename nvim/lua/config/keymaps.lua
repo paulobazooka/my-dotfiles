@@ -82,7 +82,6 @@ map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result
 map("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-
 -- Add undo break-points
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
@@ -129,6 +128,9 @@ map("n", "<leader>gg", function() Util.terminal.open({ "lazygit" }, { cwd = Util
   { desc = "Lazygit (root dir)" })
 map("n", "<leader>gG", function() Util.terminal.open({ "lazygit" }, { esc_esc = false }) end, { desc = "Lazygit (cwd)" })
 
+-- git sign
+map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "git blame line" })
+
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
@@ -157,4 +159,3 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
