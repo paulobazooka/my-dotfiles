@@ -5,8 +5,6 @@ local M = {
     { "theHamsta/nvim-dap-virtual-text" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "jbyuki/one-small-step-for-vimkind" },
-    { "nvim-neotest/neotest" },
-    { "nvim-neotest/neotest-python" },
   },
   -- stylua: ignore
   keys = {
