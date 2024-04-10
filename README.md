@@ -7,7 +7,7 @@ My dotfiles config for alacritty, neovim and bashrc
 # Instructions
 Run commands
 ```shell
-git clone git@github.com:paulobazooka/dotfiles.git ~/.dotfiles
+git clone git@github.com:paulobazooka/my-dotfiles.git ~/.dotfiles
 
 cd ~/.config
 ln -s /home/$USER/.dotfiles/alacritty
