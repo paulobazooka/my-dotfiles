@@ -37,6 +37,7 @@ return {
           })
         end,
       },
+      include_configs = true,
     },
   },
 }
