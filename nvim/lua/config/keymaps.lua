@@ -160,3 +160,18 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- refactoring
+map("n", "<leader>rR", "viwy<cmd>lua vim.lsp.buf.rename()<cr>", {desc = "Refactor variable name"})
+
+map("n", "<leader>re", ":Refactor extract ", {desc = "Extract"})
+map("n", "<leader>rf", ":Refactor extract_to_file ", {desc = "Extract to file"})
+
+map("n", "<leader>rv", ":Refactor extract_var ", {desc = "Extract variable"})
+
+map("n", "<leader>ri", ":Refactor inline_var ", {desc = "Extract inline variable"})
+
+map("n", "<leader>rI", ":Refactor inline_func", {desc = "Extract inline function"})
+
+map("n", "<leader>rb", ":Refactor extract_block", {desc = "Extract block"})
+map("n", "<leader>rbf", ":Refactor extract_block_to_file", {desc = "Extract block to file"})
