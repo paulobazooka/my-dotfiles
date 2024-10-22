@@ -85,6 +85,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
-require("notify").setup({
-  background_colour = "#000000",
-})
+-- require("notify").setup({
+--   background_colour = "#000000",
+-- })
