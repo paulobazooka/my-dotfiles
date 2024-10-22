@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      nightflyTransparent = true,
+      nightflyTransparent = false,
       nightflyTerminalColors = false,
       fillchars = {
         horiz = "━",
@@ -21,7 +21,7 @@ return {
       -- load the colorscheme here
       vim.g.nightflyCursorColor = true
       vim.g.nightflyNormalFloat = true
-      vim.g.nightflyTransparent = true
+      vim.g.nightflyTransparent = false
       vim.g.nightflyUnderlineMatchParen = true
       vim.g.nightflyVirtualTextColor = true
       vim.g.nightflyWinSeparator = 2
